@@ -10,37 +10,42 @@
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 🔚💭
 
-💭 The play command that'll execute a game of life game.
+📗A class that contains the clihelper command logic to run the GameOfLife.📗
 🐇 ⚙🔸🦠 🍇
+  💭 This class implements the 🔶🐍⚙ interface defined by clihelper, to give this a nice cli interface.
+  💭  We essentially need to just define details about a specific command that this app can perform.
+  💭  In this case, it's to run the Game Of Life simluation.
   🐊 🔶🐍⚙
   
+  📗Constructor📗
   🆕 🍇🍉
 
-  💭 Return a list of parameters
+  📗Return a list of parameters📗
+  💭 
   🔓 ❓ 🖇 ➡️  🍨🐚🔶🐍📎🍆🍇
     💭 Right now, we don't accept any parameters, but in the future it'd be nice to be able to configure the game.
+    💭  Setting map width, height, speed, and maybe allow life and death rules for cells to be adjusted.
     ↩️ 🆕🍨🐚🔶🐍📎🍆❗️
   🍉
 
-  💭 Return a command name
+  📗Return a command name📗
   🔓 ❓ 📛 ➡️ 🔡🍇
     ↩️ 🔤Play🔤
   🍉
 
-  💭 Return a command description
+  📗Return a command description📗
   🔓 ❓ 💬 ➡️ 🔡🍇
     ↩️ 🔤Runs the Game Of Life Simulation🔤
   🍉
 
-  💭 Define some logic for the command to run when it's executed
+  📗Runs the logic to run the GOL simulation, and print it to the screen📗
   🔓 ❗️ 🏃 args 🍯🐚🔡🍆 ➡️ 🔢🍇
-    💭 Generates a random game of life map that's 80 by 80 cells
-    🆕 🎲🔸🗺️ 120 120 ❗️ ➡️ gameOfLifeMap
+    💭 Generates a random game of life map using the 🎲🔸🗺️ class.
+    🆕 🎲🔸🗺️ 80 80 ❗️ ➡️ gameOfLifeMap
 
     💭 for each tick while the game is still running.
     🔁 ⏱️ gameOfLifeMap ❗ 🍇
-      💭 render
-
+      💭 render the current game state to the screen
       🔂 x 🆕⏩ 0 📏 gameOfLifeMap ❓ ❗️ 🍇
         🆕🔠 📏 gameOfLifeMap ❓ ❗️ ➡️ stringBuilder
 
@@ -57,7 +62,7 @@
       🍉
 
       💭 sleep
-      ⏲ 🐇 🧵 100000 ❗️
+      ⏲ 🐇 🧵 50000 ❗️
     🍉
 
     ↩️ 0

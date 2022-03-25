@@ -10,26 +10,35 @@
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 🔚💭
 
+📗A class that contains the state of the game of life, and contains the logic to process it one tick at a time.📗
 🐇 🎲🔸🗺️ 🍇
+  💭 An integer that holds the map width.
   🖍🆕 mapWidth 🔢
+
+  💭 An integer that holds the map height.
   🖍🆕 mapHeight 🔢
+
+  💭 A 2 dimentional list of cells (🎲🔸🦠) that contains the entire map's state.
   🖍🆕 map 🍨🐚️🍨🐚️🎲🔸🦠🍆🍆
 
-  💭 CTOR
+  📗A constructor that takes in a width and height for the game, and generates the initial game state.📗
   🆕 width 🔢 height 🔢 🍇
     💭 set instance data
     width ➡️ 🖍mapWidth
     height ➡️ 🖍mapHeight
     🆕 🍨🐚️🍨🐚️🎲🔸🦠🍆🍆❗️ ➡️ 🖍map
 
-    💭 populate map
+    💭 populate map with random date
     🆕🎰❗ ➡ randomNumberGen
 
     🔂 x 🆕⏩ 0 mapWidth❗️ 🍇
+      💭 creates a 1d list of cells, to use as a column of the map.
       🆕 🍨🐚️🎲🔸🦠🍆❗ ➡ 🖍🆕 column
 
       🔂 y 🆕⏩ 0 mapHeight❗️ 🍇
+        💭 flip a coin to see if the cell should be alive, then add it to the list.
         🔢 randomNumberGen 1 2 ❗️ ➡️ isCellAlive
+
         🆕 🎲🔸🦠 isCellAlive 🙌 1 ❗ ➡️ cell
 
         🐻 column cell ❗
@@ -39,18 +48,19 @@
     🍉
   🍉
 
-  💭 gets the width of the game
+  📗gets the width of the game📗
   🔓 ❓ 📏 ➡️ 🔢 🍇
     ↩️ mapWidth
   🍉
 
-  💭 gets the height of the game
+  📗gets the height of the game📗
   🔓 ❓ 📐 ➡️ 🔢 🍇
     ↩️ mapHeight
   🍉
 
-  💭 gets if a specific cell is alive
+  📗gets if a specific cell is alive📗
   🔓 ❓ 💙 x 🔢 y 🔢 ➡️ 👌 🍇
+    💭 if x or y is out of bounds return false
     ↪️ x ▶️🙌 mapWidth 🍇
       ↩️ 👎
     🍉
@@ -64,24 +74,30 @@
       ↩️ 👎
     🍉
 
+
+    💭 if x or y is in of bounds fetch the cell, and check if it's alive.
     🦠 👇 x y ❓ ➡ cell
 
     ↩️ 💙 cell ❓
   🍉
 
-  💭 runs a single tick of the game
+  📗runs a single tick of the game📗
   🔓 ❗️ ⏱️ ➡️ 👌 🍇
+    💭 create two lists to hold all the cells to kill or revive.
     🆕 🍨🐚️🎲🔸🦠🍆❗ ➡ 🖍🆕 cellsToKill
     🆕 🍨🐚️🎲🔸🦠🍆❗ ➡ 🖍🆕 cellsToRevieve
 
+    💭 iterate over the map.
     🔂 x 🆕⏩ 0 mapWidth❗️ 🍇
       🔂 y 🆕⏩ 0 mapHeight❗️ 🍇
+        💭 if the cell is alive and it should die, add it to the toKill list.
         ↪️ 💙 👇 x y ❓ 🤝 💀 👇 x y ❓ 🍇
           🦠 👇 x y ❓ ➡ cell
 
           🐻 cellsToKill cell ❗️
         🍉
 
+        💭 if the cell is dead and it should revive, add it to the toRevive list.
         ↪️ 💙 👇 x y ❓ 🙌 👎 🤝 🏥 👇 x y ❓ 🍇
           🦠 👇 x y ❓ ➡ cell
 
@@ -90,17 +106,19 @@
       🍉
     🍉
 
+    💭 kill and revieve all cells marked to do so.
     🔂 cell cellsToKill 🍇
       💙 cell 👎 ❗️
     🍉
-
     🔂 cell cellsToRevieve 🍇
       💙 cell 👍 ❗️
     🍉
 
+    💭 return true if we made any changes.
     ↩️ 📏 cellsToKill ❓ ▶️ 0 👐 📏 cellsToRevieve ❓ ▶️ 0 
   🍉
 
+  📗checks if a cell should die📗
   🔒 ❓ 💀 x 🔢 y 🔢 ➡️ 👌 🍇
     ↩️
       🧮 👇 x y ❓ 🙌 1 👐
@@ -111,10 +129,12 @@
       🧮 👇 x y ❓ 🙌 8
   🍉
 
+  📗checks if a cell should be revivied📗
   🔒 ❓ 🏥 x 🔢 y 🔢 ➡️ 👌 🍇
     ↩️ 🧮 👇 x y ❓ 🙌 3
   🍉
 
+  📗calculates how many living neighbors exist for an x and y coordinate📗
   🔒 ❓ 🧮 x 🔢 y 🔢 ➡️ 🔢 🍇
     0 ➡️ 🖍🆕 count
 
@@ -146,6 +166,7 @@
     ↩️ count
   🍉
 
+  📗fetches a cell from an x and y coordinate.📗
   🔒 ❓ 🦠 x 🔢 y 🔢 ➡️ 🎲🔸🦠 🍇
     ↩️ 🐽 🐽 map x ❗️ y ❗️
   🍉

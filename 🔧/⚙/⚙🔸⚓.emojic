@@ -10,20 +10,26 @@
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 🔚💭
 
-💭 An app delegate for clihelper that defines our application.
+📗An app delegate for clihelper that defines our application.📗
 🐇 ⚙🔸⚓ 🍇
+  💭 This class implements the 🔶🐍⛽ interface defined by clihelper, to give this a nice cli interface.
+  💭  We essentially need to just define some app metadata here.
   🐊 🔶🐍⛽
   
+  📗Constructor📗
   🆕 🍇🍉
 
+  📗Return the app name📗
   🔓 ❓ 📛 ➡️ 🔡🍇
     ↩️ 🔤Game Of Life🔤
   🍉
 
+  📗Return the app description📗
   🔓 ❓ 💬 ➡️ 🔡🍇
     ↩️ 🔤Conway's Game Of Life written in Emojicode🔤
   🍉
 
+  📗Return the app version📗
   🔓 ❓ ♾ ➡️ 💯🍇
     ↩️ 1.0
   🍉
