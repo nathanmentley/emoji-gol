@@ -1,0 +1,15 @@
+{
+    "name": "emoji-gol",
+    "version": "0.0.1",
+    "license": "MIT",
+    "scripts": {
+        "install": "emojicodec ./🔧/🏁.emojic -o ./bin/gol",
+        "build": "yarn install",
+        "gol": "yarn install && ./bin/gol",
+        "clean": "rm -f ./bin/*" ,
+        "test": "yarn clean && yarn build && emojicodec -S ./testPackages ./🧪/🏁.emojic -o ./bin/test && ./bin/test"
+    },
+    "dependencies": {
+        "clihelper": "https://github.com/nathanmentley/emoji-cli.git"
+    }
+}
