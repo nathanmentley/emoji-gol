@@ -14,3 +14,7 @@ Once emojicode and yarn are installed you can start the game by running:
 > yarn install
 
 > yarn gol play
+
+You can learn about additional configuration and settings for the game by running:
+
+> yarn gol help

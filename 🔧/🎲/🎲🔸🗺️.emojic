@@ -22,7 +22,7 @@
   🖍🆕 map 🍨🐚️🍨🐚️🎲🔸🦠🍆🍆
 
   📗A constructor that takes in a width and height for the game, and generates the initial game state.📗
-  🆕 width 🔢 height 🔢 🍇
+  🆕 height 🔢 width 🔢 🍇
     💭 set instance data
     width ➡️ 🖍mapWidth
     height ➡️ 🖍mapHeight

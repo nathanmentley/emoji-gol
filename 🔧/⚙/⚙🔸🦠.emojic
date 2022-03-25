@@ -23,9 +23,45 @@
   📗Return a list of parameters📗
   💭 
   🔓 ❓ 🖇 ➡️  🍨🐚🔶🐍📎🍆🍇
-    💭 Right now, we don't accept any parameters, but in the future it'd be nice to be able to configure the game.
-    💭  Setting map width, height, speed, and maybe allow life and death rules for cells to be adjusted.
-    ↩️ 🆕🍨🐚🔶🐍📎🍆❗️
+    🆕🍨🐚🔶🐍📎🍆❗️ ➡️  🖍 🆕 ret
+    
+    🐻ret
+      🆕🔶🐍📎 
+        🔤Width🔤 💭command name
+        🔤The width of the map🔤 💭command description
+        🔤width🔤 💭command key. Used to as program arg 1 to call the command
+        🔤w🔤 💭optional short key.
+        🔤80🔤 💭optional default value
+        👎 💭is this a flag parameter
+        👎 💭is this parameter requred
+      ❗️
+    ❗️
+
+    🐻ret
+      🆕🔶🐍📎 
+        🔤Height🔤 💭command name
+        🔤The height of the map🔤 💭command description
+        🔤height🔤 💭command key. Used to as program arg 1 to call the command
+        🔤h🔤 💭optional short key.
+        🔤80🔤 💭optional default value
+        👎 💭is this a flag parameter
+        👎 💭is this parameter requred
+      ❗️
+    ❗️
+
+    🐻ret
+      🆕🔶🐍📎 
+        🔤Delay🔤 💭command name
+        🔤The delay in microseconds between each tick of the simulation🔤 💭command description
+        🔤delay🔤 💭command key. Used to as program arg 1 to call the command
+        🔤d🔤 💭optional short key.
+        🔤50000🔤 💭optional default value
+        👎 💭is this a flag parameter
+        👎 💭is this parameter requred
+      ❗️
+    ❗️
+
+    ↩️ ret
   🍉
 
   📗Return a command name📗
@@ -40,31 +76,68 @@
 
   📗Runs the logic to run the GOL simulation, and print it to the screen📗
   🔓 ❗️ 🏃 args 🍯🐚🔡🍆 ➡️ 🔢🍇
+    📏 👇 args ❓ ➡ width
+    📐 👇 args ❓ ➡ height
+    ⏱ 👇 args ❓ ➡ delay
+
     💭 Generates a random game of life map using the 🎲🔸🗺️ class.
-    🆕 🎲🔸🗺️ 80 80 ❗️ ➡️ gameOfLifeMap
+    🆕 🎲🔸🗺️ width height ❗️ ➡️ gameOfLifeMap
 
     💭 for each tick while the game is still running.
     🔁 ⏱️ gameOfLifeMap ❗ 🍇
       💭 render the current game state to the screen
       🔂 x 🆕⏩ 0 📏 gameOfLifeMap ❓ ❗️ 🍇
-        🆕🔠 📏 gameOfLifeMap ❓ ❗️ ➡️ stringBuilder
+        🆕🔠 📏 gameOfLifeMap ❓ ❗️ ➡️ rowContentStringBuilder
 
         🔂 y 🆕⏩ 0 📐 gameOfLifeMap ❓ ❗️ 🍇
           ↪️ 💙 gameOfLifeMap x y ❓ 🍇
-            🐻 stringBuilder 🔤█🔤 ❗️
+            🐻 rowContentStringBuilder 🔤█🔤 ❗️
           🍉
           🙅 🍇
-            🐻 stringBuilder 🔤 🔤 ❗️
+            🐻 rowContentStringBuilder 🔤 🔤 ❗️
           🍉
         🍉
 
-        😀 🔡 stringBuilder ❗️ ❗️️
+        😀 🔡 rowContentStringBuilder ❗️ ❗️️
       🍉
 
       💭 sleep
-      ⏲ 🐇 🧵 50000 ❗️
+      ⏲ 🐇 🧵 delay ❗️
     🍉
 
     ↩️ 0
+  🍉
+
+  📗gets the width of the game📗
+  🔒 ❓ 📏 args 🍯🐚🔡🍆 ➡️ 🔢 🍇
+    ↪️  🐽 args 🔤width🔤 ❗️ ➡️ width 🍇
+      ↪️ 🔢 width 10 ❗ ➡️ width  🍇
+        ↩️ width
+      🍉
+    🍉
+
+    ↩️ 80
+  🍉
+
+  📗gets the height of the game📗
+  🔒 ❓ 📐 args 🍯🐚🔡🍆 ➡️ 🔢 🍇
+    ↪️  🐽 args 🔤height🔤 ❗️ ➡️ height 🍇
+      ↪️ 🔢 height 10 ❗ ➡️ height  🍇
+        ↩️ height
+      🍉
+    🍉
+
+    ↩️ 80
+  🍉
+
+  📗gets the height of the game📗
+  🔒 ❓ ⏱️ args 🍯🐚🔡🍆 ➡️ 🔢 🍇
+    ↪️  🐽 args 🔤delay🔤 ❗️ ➡️ delay 🍇
+      ↪️ 🔢 delay 10 ❗ ➡️ delay  🍇
+        ↩️ delay
+      🍉
+    🍉
+
+    ↩️ 50000
   🍉
 🍉
