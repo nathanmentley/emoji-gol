@@ -12,4 +12,5 @@ Yarn can be installed with homebrew using
 Once emojicode and yarn are installed you can start the game by running:
 
 > yarn install
+
 > yarn gol play
